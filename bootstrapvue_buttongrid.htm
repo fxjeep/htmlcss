@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+<link type="text/css" rel="stylesheet" href="https://unpkg.com/bootstrap/dist/css/bootstrap.min.css" />
+<link type="text/css" rel="stylesheet" href="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.css" />
+
+<script src="//polyfill.io/v3/polyfill.min.js?features=es2015%2CIntersectionObserver" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/vue@latest/dist/vue.min.js"></script>
+<script src="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.js"></script>
+<script src="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue-icons.min.js"></script>
+<style>
+#app {
+}
+
+#my-checkbox{
+	display: grid;
+	grid-template-columns: repeat(auto-fill, 200px);
+	gap: 10px;
+	grid-auto-rows: 1fr;
+}
+
+
+#my-checkbox > .btn:before {
+	content:"";
+	vertical-align: middle;	
+	display: inline-block;
+	height: 100%;
+}
+
+#my-checkbox > .btn > span {
+	vertical-align: middle;	
+	display: inline-block;
+}
+</style>
+</head>
+<body>
+<div id="app">
+<div>
+     <b-form-group label="Using options array:" v-slot="{ ariaDescribedby }">
+      <b-form-checkbox-group
+        id="my-checkbox"
+        v-model="selected"
+        :options="options"
+        :aria-describedby="ariaDescribedby"
+        name="flavour-1"
+		buttons
+      ></b-form-checkbox-group>
+    </b-form-group>
+</div>
+</div>
+
+<script type="application/javascript">
+
+var vm = new Vue({
+  el: '#app',
+  data: {
+	selected:"",
+	options:[
+		"Fire Extinguishers",
+		"Smoke/heat detectors",
+		"Other",
+		"Fire hoses/hydrants",
+		"Connected to mains water supply",
+		"No Fire Protection",
+		"Fire blankets",
+		"Sprinklers suited for the current occupancy"
+	]
+  }
+})
+
+
+</script>
+</body>
+</html>
