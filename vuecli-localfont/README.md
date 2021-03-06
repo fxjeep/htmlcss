@@ -13,33 +13,33 @@ vue.config.js example for using local font files in vue-cli.
 5. using @import in additionalData will break the function of additionalData option.
    I have to import scss in main.js, and only use plain css/scss in additionalData.
    
-   ```
-   this works.
-  css: {
-        loaderOptions: {
-          scss: {  //@import "~@/assets/scss/site.scss";
-            additionalData : `            
-            .preclass {
-              background-color: red;
-            }
-            `,    //
-            sourceMap: true,
-          }
-        }
-    },
-	
-	this does not work.
-	css: {
-        loaderOptions: {
-          scss: {  
-            additionalData : `            
-			@import "~@/assets/scss/site.scss";
-            .preclass {
-              background-color: red;
-            }
-            `,    //
-            sourceMap: true,
-          }
-        }
-    },
-	```
+```
+this works.
+css: {
+	loaderOptions: {
+	  scss: {  //@import "~@/assets/scss/site.scss";
+		additionalData : `            
+		.preclass {
+		  background-color: red;
+		}
+		`,    //
+		sourceMap: true,
+	  }
+	}
+},
+
+this does not work.
+css: {
+	loaderOptions: {
+	  scss: {  
+		additionalData : `            
+		@import "~@/assets/scss/site.scss";
+		.preclass {
+		  background-color: red;
+		}
+		`,    //
+		sourceMap: true,
+	  }
+	}
+},
+```
