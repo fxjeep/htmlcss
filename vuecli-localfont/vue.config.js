@@ -1,7 +1,12 @@
 module.exports = {
     css: {
         loaderOptions: {
-          scss: {
+          scss: {  //@import "~@/assets/scss/site.scss";
+            additionalData : `            
+            .preclass {
+              background-color: red;
+            }
+            `,    //
             sourceMap: true,
           }
         }

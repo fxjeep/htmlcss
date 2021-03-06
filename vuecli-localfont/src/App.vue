@@ -2,6 +2,8 @@
   <div id="app">
     <div class="icon1">Icon using CSS</div>
     <div class="icontext">Icon in html content &#xe062;</div>
+    <div class="test">blue background set in site.scss</div>
+    <div class="preclass">red background set in additionaldata in vue.config.js</div>
   </div>
 </template>
 
